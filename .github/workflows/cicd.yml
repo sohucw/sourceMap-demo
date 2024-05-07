@@ -1,0 +1,24 @@
+name: todoList 自动部署
+on:
+  push:
+    branches:
+      - master
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8.6.2
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16.X
+      - run: npm install
+      - run: npm run build
+      - name: action-Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.DEPLOY_SECRET }}
+          BRANCH: gh-pages
+          publish_dir: ./dist
