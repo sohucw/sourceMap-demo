@@ -4,7 +4,7 @@ import { RouterLink, RouterView } from 'vue-router'
 // import HelloWorld from './components/HelloWorld.vue'
 onMounted(() => {
     let testNum = null;
-    if (testNum.legnth > 1) {
+    if (testNum!.length > 1) {
       console.log('报错了！');
     }
 });
@@ -23,7 +23,6 @@ onMounted(() => {
 
   <RouterView />
 </template>
-
 <style scoped>
 header {
   line-height: 1.5;
