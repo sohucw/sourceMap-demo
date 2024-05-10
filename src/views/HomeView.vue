@@ -21,7 +21,7 @@
       </el-row>
       <el-row :gutter="20">
         <template v-if="item.origin">
-          {{ item.origin }}
+          <PreView :origin="item.origin"></PreView>
         </template>
         <template v-else>
           <div>{{ item.fileName }}</div>
@@ -51,6 +51,7 @@
 import { ElMessage } from 'element-plus'
 import sourceMap from 'source-map-js'
 import { onMounted, ref} from 'vue';
+import PreView from './AboutView.vue';
 const dialogVisible = ref(false);
 const tabActiveName = ref('local');
 const activeName = ref<string[]>(['1']);
