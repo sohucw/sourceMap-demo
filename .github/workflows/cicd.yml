@@ -2,7 +2,7 @@ name: todoList 自动部署
 on:
   push:
     branches:
-      - master
+      - dev
 jobs:
   deploy:
     runs-on: ubuntu-latest
