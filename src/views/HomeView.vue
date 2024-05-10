@@ -82,7 +82,7 @@ const openDialog = (item: any, index: number) => {
 
 }
 const sourceMapUpload =  async (file: any) => {
-  if(file.name.endsWith('.map')) {
+  if(file.name.substring(file.name.lastIndexOf('.') + 1) !== 'map') {
     ElMessage.error('请上传正确的sourceMap文件');
     return;
   }
