@@ -21,7 +21,7 @@
       </el-row>
       <el-row :gutter="20">
         <template v-if="item.origin">
-          <PreView :origin="item.origin"></PreView>
+          <PreView :orgin="item.origin"></PreView>
         </template>
         <template v-else>
           <div>{{ item.fileName }}</div>
