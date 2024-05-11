@@ -18,7 +18,7 @@ export default {
             // 先获取源码有多少行
             const originCodeLine = this.orgin.source.split('\n')
             const len = originCodeLine.length - 1
-            const start =  this.orgin.line- 3 >= 0 ? this.orgin.line - 3 : 0
+            const start =  line- 3 >= 0 ? line - 3 : 0
             const end = start + 5 >= len ? len : start + 5 // 最多展示6行
             let newLines = []
             for (var i = start; i <= end; i++) {
@@ -40,7 +40,7 @@ export default {
     }
 }
 </script>
-<style scoped>
+<style>
 .error-code {
     padding: 10px;
     overflow: hidden;
