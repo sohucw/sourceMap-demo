@@ -41,22 +41,17 @@ export default {
 }
 </script>
 <style lang="less" scoped>
-.pre-code {
-    .error-detail {
-        .error-code {
-            padding: 10px;
-            overflow: hidden;
-            font-family: consolas, monospace;
-            word-wrap: normal;
-        }
-
+.error-code {
+        padding: 10px;
+        overflow: hidden;
+        font-family: consolas, monospace;
+        word-wrap: normal;
     }
-    .code-line {
-        padding: 4px;
-    }
-    .heightlight {
-        color: #fff;
-        background-color: #f12926;
-    }
+.code-line {
+    padding: 4px;
+}
+.heightlight {
+    color: #fff;
+    background-color: #f12926;
 }
 </style>
