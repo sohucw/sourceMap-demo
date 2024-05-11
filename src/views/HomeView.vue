@@ -94,6 +94,7 @@ const sourceMapUpload =  async (file: any) => {
     js_error.value.stack_frames[stackFrameObj.index].origin = code;
     dialogVisible.value = false;
   }
+  return false;
 }
 const getSource = async (sourcemap: any, line: number, column: number) => {
   try {
