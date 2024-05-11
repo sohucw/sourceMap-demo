@@ -42,11 +42,11 @@ export default {
 </script>
 <style lang="less" scoped>
 .error-code {
-        padding: 10px;
-        overflow: hidden;
-        font-family: consolas, monospace;
-        word-wrap: normal;
-    }
+    padding: 10px;
+    overflow: hidden;
+    font-family: consolas, monospace;
+    word-wrap: normal;
+}
 .code-line {
     padding: 4px;
 }
