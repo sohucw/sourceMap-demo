@@ -40,7 +40,7 @@ export default {
     }
 }
 </script>
-<style lang="less" scoped>
+<style scoped>
 .error-code {
     padding: 10px;
     overflow: hidden;
@@ -52,6 +52,6 @@ export default {
 }
 .heightlight {
     color: #fff;
-    background-color: #f12926!important;
+    background: #f12926!important;
 }
 </style>
