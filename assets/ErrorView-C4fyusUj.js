@@ -1,0 +1,2 @@
+import{d as a,o as p,c,a as e,b as t,r as d}from"./index-Cru52U2A.js";const E={class:"about"},v=a({__name:"ErrorView",setup(f){const s=()=>{typeError.length>0&&console.log("err!")},l=()=>{throw new ReferenceError("Hello")},i=()=>{throw new SyntaxError("Hello")};return(g,r)=>{const o=d("el-divider");return p(),c("div",E,[e("p",{onClick:r[0]||(r[0]=n=>s())},"触发TypeError"),t(o),e("p",{onClick:r[1]||(r[1]=n=>l())},"触发ReferenceError"),t(o),e("p",{onClick:r[2]||(r[2]=n=>i())},"触发SyntaxError")])}}});export{v as default};
+//# sourceMappingURL=ErrorView-C4fyusUj.js.map
