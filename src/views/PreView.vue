@@ -52,6 +52,6 @@ export default {
 }
 .heightlight {
     color: #fff;
-    background: #f12926!important;
+    background: #f12926;
 }
 </style>
