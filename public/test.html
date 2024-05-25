@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>IntersectionObserver</title>
+</head>
+<style>
+    *{
+        padding:0;
+        margin:0;
+    }
+    .box{
+        background:#faecd8;
+        width:600px;
+        height:400px;
+        font-size:24px;
+        text-align: center;
+        overflow-y: scroll;
+    }
+    #container {
+        overflow-y: scroll;
+    }
+</style>
+<body>
+    <div class="box">
+        <div id="container"></div>
+        <div id="loadMore">加载中...</div>
+    </div>
+</body>
+<script>
+const container = document.querySelector('#container');
+const loadMore = document.querySelector('#loadMore');
+let index = 0;
+
+//批量添加元素
+const loadItems = (count) => {
+    [...Array(count).keys()].forEach((key) => {
+        //当超过100时停止所有观察
+        if(index == 100){
+            observer.disconnect();
+            return;
+        }
+        const p = document.createElement('p');
+        p.innerHTML = `${key + index}`;
+        container.appendChild(p)
+
+    })
+    index += count;
+}
+
+//初始化一个观察实例
+const observer = new IntersectionObserver((entries) => {
+    //目标元素余市口交叉则显示true,则添加元素
+    entries.forEach((entry) => {
+        console.log(entry);
+        if (entry.isIntersecting) {
+            loadItems(20);
+        }
+    })
+},{});
+
+//开始观察
+observer.observe(loadMore);
+</script>
+</html>

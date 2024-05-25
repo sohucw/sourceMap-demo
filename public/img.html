@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            img {
+                width: 100vw;
+                transform: translateX(50%);
+                transition: all 500ms;
+            }
+
+            .fade {
+                transform: translateX(0);
+                opacity: 1;
+                transition: all 500ms;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <h1>图片相册</h1>
+            <img height="400" width="400" data-src="https://t7.baidu.com/it/u=2581522032,2615939966&fm=193&f=GIF" alt="" />
+            <img height="400" src="" data-src="https://t7.baidu.com/it/u=245883932,1750720125&fm=193&f=GIF" alt="" />
+            <img height="400" data-src="https://t7.baidu.com/it/u=3423293041,3900166648&fm=193&f=GIF" alt="" />
+            <img height="400" data-src="https://t7.baidu.com/it/u=3241434606,2550606435&fm=193&f=GIF" alt="" />
+            <img height="400"  data-src="https://t7.baidu.com/it/u=1417505637,1247476664&fm=193&f=GIF" alt="" />
+            <img height="400" data-src="https://t7.baidu.com/it/u=1785207335,3397162108&fm=193&f=GIF" alt="" />
+            <img height="400" data-src="https://t7.baidu.com/it/u=338595665,4065109605&fm=193&f=GIF" alt="" />
+            <img height="400" data-src="https://t7.baidu.com/it/u=1732966997,2981886582&fm=193&f=GIF" alt="" />
+            <img height="400" data-src="https://t7.baidu.com/it/u=2581522032,2615939966&fm=193&f=GIF" alt="" />
+            <img height="400" data-src="https://t7.baidu.com/it/u=245883932,1750720125&fm=193&f=GIF" alt="" />
+            <img height="400" data-src="https://t7.baidu.com/it/u=3423293041,3900166648&fm=193&f=GIF" alt="" />
+            <img height="400" data-src="https://t7.baidu.com/it/u=3241434606,2550606435&fm=193&f=GIF" alt="" />
+            <img height="400" data-src="https://t7.baidu.com/it/u=1417505637,1247476664&fm=193&f=GIF" alt="" />
+            <img
+                data-src="https://img0.baidu.com/it/u=775184654,1087701200&fm=253&fmt=auto&app=138&f=JPEG?w=800&h=500"
+            />
+        </div>
+    </body>
+    <script>
+        // 创建观察器对象
+        const observer = new IntersectionObserver((entries) => {
+            // 遍历所有被观察的元素
+            for (const entry of entries) {
+                // 判断元素是否进入可视区域
+                if (entry.isIntersecting) {
+                    console.log('进入可视区域')
+                    // 获取图片元素
+                    const img = entry.target
+                    // console.log(img)
+                    // 更新图片的 src 属性
+                    img.src = img.dataset.src
+                    console.log(img)
+                    // 取消观察
+                    observer.unobserve(img)
+                }
+            }
+        })
+
+        // 获取所有图片元素
+        const imgs = document.querySelectorAll('img[data-src]')
+
+        // 遍历所有图片元素
+        for (const img of imgs) {
+            // 观察图片元素
+            observer.observe(img)
+        }
+    </script>
+</html>
